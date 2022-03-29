@@ -13,9 +13,9 @@ export default function Banner() {
             backgroundColor: '#1b5e9d',
             color: 'white'
         }
-      };
+    }
 
-      const closeButton = {
+    const closeButton = {
         theme: {
                 position: 'absolute',
                 right: '1.5rem' ,
@@ -25,17 +25,18 @@ export default function Banner() {
                 fontSize: '2rem',
                 color:'white',
                 cursor: 'pointer'
-            }
-        };
+        }
+    }
 
   return (
     <>
-      <div style={bannerBox.theme}>
-          {
-          show?<p>{bannerBox.content}</p>:null
-          }
-          <button onClick={()=>setShow(false)} style={closeButton.theme}>&times;</button>
-      </div>
+    {/* Conditional Rendering */}
+      { show && 
+        <div style={bannerBox.theme}>
+          <p>{bannerBox.content}</p>
+        </div>
+      }
+      <button onClick={()=>setShow(false)} style={closeButton.theme}>&times;</button>
     </>
   )
 }
