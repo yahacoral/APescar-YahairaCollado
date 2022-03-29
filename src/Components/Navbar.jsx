@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import BrandLogo from "../Assets/logo.png";
 
-const pages = ['Inicio','Nosotros','Tienda', 'Clases de Pesca', 'Artículos'];
+const pages = ['Inicio','Tienda', 'Clases de Pesca', 'Blog'];
 const settings = ['Perfil', 'Tus Pedidos', 'Direcciones', 'Cerrar Sesión'];
 
 export default function Navbar() {
