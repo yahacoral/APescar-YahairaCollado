@@ -1,42 +1,42 @@
 import React,{useState} from 'react'
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import { bannerInfo } from "../contents";
 
 export default function Banner() {
-    const [show, setShow]=useState(true)
+  const [show, setShow]=useState(true)
 
-    const bannerBox = {
-        content: bannerInfo,
+  const bannerBox = {
+    content: bannerInfo,
     
-        theme: {
-            padding: '0.25rem 0',
-            textAlign: 'center',
-            backgroundColor: '#1b5e9d',
-            color: 'white'
-        }
+    theme: {
+      padding: '0.25rem 0',
+      textAlign: 'center',
+      backgroundColor: '#1b5e9d',
+      color: 'white'
     }
+  }
 
-    const closeButton = {
-        theme: {
-                position: 'absolute',
-                right: '1.5rem' ,
-                top: '1rem',
-                backgroundColor: 'transparent',
-                border: 'none',
-                fontSize: '2rem',
-                color:'white',
-                cursor: 'pointer'
-        }
+  const closeButton = {
+    theme: {
+      position: 'absolute',
+      right: '1.5rem' ,
+      top: '0.8rem',
+      color:'white',
     }
+  }
 
   return (
     <>
-    {/* Conditional Rendering */}
       { show && 
         <div style={bannerBox.theme}>
           <p>{bannerBox.content}</p>
         </div>
       }
-      <button onClick={()=>setShow(false)} style={closeButton.theme}>&times;</button>
+   
+      <IconButton aria-label="close" onClick={()=>setShow(false)} style={closeButton.theme}>
+        <CloseIcon />
+      </IconButton>
     </>
   )
 }
