@@ -11,8 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
 import BrandLogo from "../Assets/logo.png";
+import CartWidget from './CartWidget';
 
 const pages = ['Inicio','Tienda', 'Clases de Pesca', 'Blog'];
 const settings = ['Perfil', 'Tus Pedidos', 'Direcciones', 'Cerrar Sesión'];
@@ -37,7 +37,8 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+   <>
+    <AppBar position="sticky">
       <Container maxWidth="xl" sx={{background:'white'}}>
         <Toolbar disableGutters>
           <Typography
@@ -109,7 +110,7 @@ export default function Navbar() {
               </Button>
             ))}
           </Box>
-
+          <CartWidget/>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -142,5 +143,6 @@ export default function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
+   </>
   );
 };
