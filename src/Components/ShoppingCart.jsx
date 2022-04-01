@@ -12,7 +12,8 @@ export default function ShoppingCart() {
       width:'20rem',
       padding: '0.5rem 2rem',
       boxShadow: 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px',
-      color: '#1b1b1b'
+      color: '#1b1b1b',
+      background: 'white'
     }
   }
 
