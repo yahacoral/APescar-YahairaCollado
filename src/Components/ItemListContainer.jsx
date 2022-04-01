@@ -7,19 +7,16 @@ export default function ItemListContainer() {
   const itemList = {
     theme: {
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr 1fr',
+      gridTemplateColumns: '1fr 1fr 1fr 1fr'
     }
   }
 
   return (
     <>
         <div style={itemList.theme}>
-          {productArray.map((product) => (
+          {productArray.map(( {image, title, price, description}  ) => (
             <ProductCard
-              image={product.image}
-              title={product.title}
-              price={product.price}
-              description={product.description}
+              {...{image, title, price, description}}
             />
           ))}
         </div>
