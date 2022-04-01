@@ -34,7 +34,7 @@ export default function ProductCart({title, description, price, image}) {
                 </Typography>
             </CardContent>
             <CardActions style={{paddingBottom:'2rem'}}>
-                <Button size="small" color="error" variant="contained" style={shopButton.theme} >Comprar</Button>
+                <Button size="small" color="error" variant="contained" style={shopButton.theme} >Agregar al carrito</Button>
             </CardActions>
         </Card>
     </>
