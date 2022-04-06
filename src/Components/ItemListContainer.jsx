@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from "./ProductCart"
+import Item from "./Item"
 import { productArray } from "../Products";
 
 export default function ItemListContainer() {
@@ -15,7 +15,7 @@ export default function ItemListContainer() {
     <>
         <div style={itemList.theme}>
           {productArray.map(( {image, title, price, description, stock } ) => (
-            <ProductCard
+            <Item
               {...{image, title, price, description, stock}}
             />
           ))}
