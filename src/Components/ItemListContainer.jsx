@@ -14,9 +14,9 @@ export default function ItemListContainer() {
   return (
     <>
         <div style={itemList.theme}>
-          {productArray.map(( {image, title, price, description}  ) => (
+          {productArray.map(( {image, title, price, description, stock } ) => (
             <ProductCard
-              {...{image, title, price, description}}
+              {...{image, title, price, description, stock}}
             />
           ))}
         </div>
