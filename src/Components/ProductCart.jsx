@@ -5,13 +5,26 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ItemCount from './ItemCount'
 
-export default function ProductCart({title, description, price, image}) {
+export default function ProductCart({title, description, price, image, stock}) {
     const shopButton = {
         theme: {
           margin: '0 auto',
         }
     }
+
+    // Disabled onAdd button
+    let disabled = false;
+    if (stock === "0") {
+        disabled = true;
+    }
+
+    // OnAdd Button
+    const onAdd = () => {
+        alert('agregado')
+    }
+  
 
   return (
     <>
@@ -33,8 +46,9 @@ export default function ProductCart({title, description, price, image}) {
                 S/. {price}
                 </Typography>
             </CardContent>
+            <ItemCount stock={stock}/>
             <CardActions style={{paddingBottom:'2rem'}}>
-                <Button size="small" color="error" variant="contained" style={shopButton.theme} >Agregar al carrito</Button>
+                <Button size="medium" color="error" variant="contained" style={shopButton.theme} onClick={onAdd} disabled={disabled}>Agregar al carrito</Button>
             </CardActions>
         </Card>
     </>
