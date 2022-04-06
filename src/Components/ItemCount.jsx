@@ -20,7 +20,8 @@ export default function ItemCount({stock}) {
           background: 'white',
           border: 'none',
           fontSize: '1.5rem',
-          color: '#1b5e9d'
+          color: '#1b5e9d', 
+          cursor: 'pointer'
         }
       }
 
