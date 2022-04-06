@@ -1,9 +1,9 @@
 export const bannerInfo =
   "🚚 Despachos de Lunes a Viernes. Recibe tu pedido en 24 horas, si ordenas antes de las 3PM.";
 
-export const shopTitle = "Los mejores productos";
+export const storeTitle = "Los mejores productos";
 
-export const shopSubtitle = "Diferentes marcas reconocidas de cañas, carretes y accesorios.";
+export const storeSubtitle = "Diferentes marcas reconocidas de cañas, carretes y accesorios.";
 
 export const lessonsTitle = "Pescamos junto a ti.";
 

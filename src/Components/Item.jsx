@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount'
 
-export default function ProductCart({title, description, price, image, stock}) {
+export default function Item({title, description, price, image, stock}) {
     const shopButton = {
         theme: {
           margin: '0 auto',

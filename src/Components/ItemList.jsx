@@ -2,7 +2,7 @@ import React from 'react'
 import Item from "./Item"
 import { productArray } from "../Products";
 
-export default function ItemListContainer() {
+export default function ItemList() {
 
   const itemList = {
     theme: {

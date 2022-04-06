@@ -1,10 +1,10 @@
 import React from 'react'
-import ItemListContainer from '../ItemListContainer'
-import { shopTitle, shopSubtitle } from "../../contents";
+import ItemList from '../ItemList'
+import { storeTitle, storeSubtitle } from "../../contents";
 
-export default function Shop() {
+export default function ItemListContainer() {
   
-  const shopView = {
+  const storeView = {
     theme: {
       minHeight: 'calc(100vh - 8.5rem)',
       padding: '2rem',
@@ -12,7 +12,7 @@ export default function Shop() {
   }
 
   const title = {
-    content: shopTitle,
+    content: storeTitle,
 
     theme: {
       fontWeight: '700',
@@ -21,7 +21,7 @@ export default function Shop() {
   }
 
   const subtitle = {
-    content: shopSubtitle,
+    content: storeSubtitle,
 
     theme: {
       color:'#777777',
@@ -32,10 +32,10 @@ export default function Shop() {
 
   return (
     <>
-      <div style={shopView.theme}>
+      <div style={storeView.theme}>
         <h1 style={title.theme}>{title.content}</h1>
         <p style={subtitle.theme}>{subtitle.content}</p>
-        <ItemListContainer/>
+        <ItemList/>
       </div>
     </>
   )
