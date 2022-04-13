@@ -3,36 +3,18 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 import ItemDetailContainer from './ItemDetailContainer';
+import AddItemButton from './AddItemButton'
 
-export default function Item({title, price, image, stock}) {
+export default function Item({id,title, price, image, stock}) {
 
     const cardActions = {
         theme: {
-            display: 'block'
+            display: 'block',
+            marginBottom: '1rem'
         }
-    }
-
-    const getItemButton = {
-        theme: {
-            width: '90%',
-            height: '3rem',
-            margin:'0 0 0.5rem 0'
-        }
-    } 
-
-    // Disabled onAdd button
-    let disabled = false;
-    if (stock === "0") {
-        disabled = true;
-    }
-
-    // Get Item Button
-    const getItem = () => {
-        alert('agregado')
     }
     
   return (
@@ -48,17 +30,20 @@ export default function Item({title, price, image, stock}) {
                 <Typography gutterBottom variant="h6" component="div">
                 {title}
                 </Typography>
-                <Typography variant="h7">
+                <Typography variant="h6">
                 S/. {price}
+                </Typography>
+                <Typography variant="b2">
+                SKU: {id}
                 </Typography>
             </CardContent>
             <ItemCount stock={stock}/>
             <CardActions style={cardActions.theme}>
-                {/* Get Item */}
-                <Button size="medium" color="primary" variant="contained" onClick={getItem} disabled={disabled} style={getItemButton.theme}>Agregar al carrito</Button>
+                {/* Add Item Button*/}
+                <AddItemButton stock={stock}/>
 
-                {/* See Product Details */}
-                <ItemDetailContainer/>  
+                {/* See Item Details */}
+                <ItemDetailContainer id={id}/>  
             </CardActions>
         </Card>
     </>

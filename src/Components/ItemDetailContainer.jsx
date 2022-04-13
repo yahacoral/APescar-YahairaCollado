@@ -1,17 +1,21 @@
 import React,{useState} from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import ItemDetail from './ItemDetail'
+import { productArray } from "../Products";
 
-export default function ItemDetailContainer() {
+export default function ItemDetailContainer({id}) {
 
   // Show Item Detail
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  // Get Item by id
+  const getItem = productArray.find( item => item.id === id);
 
   const style = {
     position: 'absolute',
@@ -56,12 +60,9 @@ export default function ItemDetailContainer() {
           <IconButton aria-label="close" onClick={handleClose} style={closeButton.theme}>
             <CloseIcon />
           </IconButton>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <ItemDetail
+            item={getItem}
+          />
         </Box>
       </Modal>
     </>

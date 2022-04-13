@@ -14,9 +14,9 @@ export default function ItemList() {
   return (
     <>
         <div style={itemList.theme}>
-          {productArray.map(( {image, title, price, stock } ) => (
+          {productArray.map(( {id, image, title, price, stock } ) => (
             <Item
-              {...{image, title, price, stock}}
+              {...{id, image, title, price, stock}}
             />
           ))}
         </div>
