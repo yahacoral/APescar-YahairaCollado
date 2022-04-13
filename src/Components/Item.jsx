@@ -5,14 +5,24 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import ItemCount from './ItemCount'
+import ItemCount from './ItemCount';
+import ItemDetailContainer from './ItemDetailContainer';
 
-export default function Item({title, description, price, image, stock}) {
-    const shopButton = {
+export default function Item({title, price, image, stock}) {
+
+    const cardActions = {
         theme: {
-          margin: '0 auto',
+            display: 'block'
         }
     }
+
+    const getItemButton = {
+        theme: {
+            width: '90%',
+            height: '3rem',
+            margin:'0 0 0.5rem 0'
+        }
+    } 
 
     // Disabled onAdd button
     let disabled = false;
@@ -20,35 +30,35 @@ export default function Item({title, description, price, image, stock}) {
         disabled = true;
     }
 
-    // OnAdd Button
-    const onAdd = () => {
+    // Get Item Button
+    const getItem = () => {
         alert('agregado')
     }
-  
-
+    
   return (
     <>
         <Card sx={{ maxWidth: 345, margin: '1rem' }}>
             <CardMedia
                 component="img"
                 alt="product"
-                height="150"
+                height="200"
                 image={image}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                 {title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                {description}
                 </Typography>
                 <Typography variant="h7">
                 S/. {price}
                 </Typography>
             </CardContent>
             <ItemCount stock={stock}/>
-            <CardActions style={{paddingBottom:'2rem'}}>
-                <Button size="medium" color="error" variant="contained" style={shopButton.theme} onClick={onAdd} disabled={disabled}>Agregar al carrito</Button>
+            <CardActions style={cardActions.theme}>
+                {/* Get Item */}
+                <Button size="medium" color="primary" variant="contained" onClick={getItem} disabled={disabled} style={getItemButton.theme}>Agregar al carrito</Button>
+
+                {/* See Product Details */}
+                <ItemDetailContainer/>  
             </CardActions>
         </Card>
     </>
