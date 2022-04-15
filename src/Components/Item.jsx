@@ -19,11 +19,11 @@ export default function Item({id,title, price, image, stock}) {
     
   return (
     <>
-        <Card sx={{ maxWidth: 345, margin: '1rem' }}>
+        <Card sx={{ maxWidth: 345,margin: '1rem' }}>
             <CardMedia
                 component="img"
                 alt="product"
-                height="200"
+                height="190"
                 image={image}
             />
             <CardContent>
@@ -32,9 +32,6 @@ export default function Item({id,title, price, image, stock}) {
                 </Typography>
                 <Typography variant="h6">
                 S/. {price}
-                </Typography>
-                <Typography variant="b2">
-                SKU: {id}
                 </Typography>
             </CardContent>
             <ItemCount stock={stock}/>

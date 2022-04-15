@@ -1,4 +1,5 @@
 import React from 'react'
+import { Routes, Route} from "react-router-dom";
 import Home from "./Views/Home"
 import ItemListContainer from "./Views/ItemListContainer"
 import Lessons from "./Views/Lessons"
@@ -14,15 +15,13 @@ export default function Mainview() {
   }
 
   return (
-    <>
-        {/* TODO: Install react router */}
-        <div style={mainview.theme}>
-          <Home/>
-          {/* Store Section */}
-          <ItemListContainer/> 
-          <Lessons/>
-          <Blog/>
-        </div>
-    </>
+    <div style={mainview.theme}>
+      <Routes>
+          <Route path="/Inicio" element={<Home />} />
+          <Route path="/Tienda" element={<ItemListContainer />} />
+          <Route path="/Clases" element={<Lessons />} />
+          <Route path="/Blog" element={<Blog />} />
+      </Routes>
+    </div>
   )
 }

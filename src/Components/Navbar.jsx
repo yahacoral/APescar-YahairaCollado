@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,8 +15,8 @@ import MenuItem from '@mui/material/MenuItem';
 import BrandLogo from "../Assets/logo.png";
 import CartWidget from './CartWidget';
 
-const pages = ['Inicio','Tienda', 'Clases de Pesca', 'Blog'];
-const settings = ['Perfil', 'Tus Pedidos', 'Direcciones', 'Cerrar Sesión'];
+const pages = ['Inicio','Tienda', 'Clases', 'Blog'];
+const settings = ['Perfil', 'Pedidos', 'Direcciones', 'Cerrar Sesión'];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,7 +39,7 @@ export default function Navbar() {
 
   return (
    <>
-    <AppBar position="sticky">
+    <AppBar position="static">
       <Container maxWidth="xl" sx={{background:'white'}}>
         <Toolbar disableGutters>
           <Typography
@@ -59,7 +60,6 @@ export default function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-            //   color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -82,9 +82,11 @@ export default function Navbar() {
               }}
             >
               {pages.map((page) => (
+              <Link to={page}>
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+              </Link>
               ))}
             </Menu>
           </Box>
@@ -101,13 +103,15 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
+              <Link to={page}>
+                <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: '#1b5e9d',fontWeight:'bold', display: 'block' }}
-              >
-                {page}
-              </Button>
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
           <CartWidget/>
