@@ -24,16 +24,16 @@ export default function ItemDetail({item}) {
       <div style={grid.theme}>
         <img src={item.image} alt="item thumbnail" style={imageStyled.theme}/>
         <div>
-          <span>
+          <span style={{display:"flex", justifyContent:"space-between"}}>
             <p><b>{item.category}</b></p>
             <p>SKU:{item.id}</p>
           </span>
           <h1>{item.title}</h1>
           <h3>Precio: S/.{item.price}</h3>
           <p>{item.description}</p>
-          <ItemCount/>
+          <ItemCount stock={item.stock}/>
           {/* Add Item */}
-          <AddItemButton stock={item.stock}/>
+          <AddItemButton/>
         </div>
       </div>
     </>
