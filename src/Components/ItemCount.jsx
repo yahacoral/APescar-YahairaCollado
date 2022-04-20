@@ -1,30 +1,8 @@
 import React, { useState } from "react";
+import styles from '../styles.module.css';
 
 export default function ItemCount({stock}) {
-    const itemCount = {
-        theme: {
-          display:'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          margin:'0 2rem',
-          padding: '0.25rem 0.5rem',
-          borderRadius:'0.5rem',
-          border: '1px solid gray',
-          backgroundColor: 'white',
-          color: 'black'
-        }
-      }
-      
-      const itemCountButton = {
-        theme: {
-          background: 'white',
-          border: 'none',
-          fontSize: '1.5rem',
-          color: '#1b5e9d', 
-          cursor: 'pointer'
-        }
-      }
-
+    
     // State to store count value
     const [count, setCount] = useState(1);
 
@@ -45,10 +23,10 @@ export default function ItemCount({stock}) {
 
   return (
     <>
-        <div style={itemCount.theme}>
-            <button onClick={decreaseCount}  style={itemCountButton.theme}>-</button>
+        <div className={styles.itemCount}>
+            <button onClick={decreaseCount}  className={styles.itemCountButton}>-</button>
             <span>{count}</span>
-            <button onClick={incrementCount} style={itemCountButton.theme}>+</button>
+            <button onClick={incrementCount} className={styles.itemCountButton}>+</button>
         </div>
         <span>Stock: {stock} unidades</span>   
     </>

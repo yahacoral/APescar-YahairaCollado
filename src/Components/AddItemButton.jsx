@@ -1,20 +1,14 @@
-import React from 'react'
+import React from 'react';
 import Button from '@mui/material/Button';
+import styles from '../styles.module.css';
 
 export default function AddItemButton({stock}) {
-    const addItemButton = {
-        theme: {
-            width: '90%',
-            height: '3rem',
-            margin:'0 0 0.5rem 0'
-        }
-    } 
 
-    // Disabled onAdd button
+    // Disabled Button
     let disabled = false;
     if (stock === "0") {
         disabled = true;
-    }
+    } 
 
     // Add Item Button
     const addItem = () => {
@@ -23,7 +17,7 @@ export default function AddItemButton({stock}) {
 
   return (
     <>
-        <Button size="medium" color="primary" variant="contained" onClick={addItem} disabled={disabled} style={addItemButton.theme}>Agregar al carrito</Button>
+        <Button size="medium" color="primary" variant="contained" onClick={addItem} disabled={disabled} className={styles.addItemButton} >Agregar al carrito</Button>
     </>
   )
 }

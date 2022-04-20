@@ -1,39 +1,23 @@
-import React from 'react'
+import React from 'react';
 import { lessonsTitle, lessonsSubtitle } from "../../contents";
+import styles from '../../styles.module.css';
 
 
 export default function Lessons() {
 
-  const lessonsView = {
-    theme: {
-      minHeight: 'calc(100vh - 8.5rem)',
-      padding: '2rem',
-    }
-  }
-
   const title = {
-    content: lessonsTitle,
-
-    theme: {
-      fontWeight: '700',
-      margin: '0',
-    }
+    content: lessonsTitle
   }
 
   const subtitle = {
-    content: lessonsSubtitle,
-
-    theme: {
-      color:'#777777',
-      margin: '0.5rem 0 2rem 0',
-    }
+    content: lessonsSubtitle
   }
 
   return (
    <>
-    <div style={lessonsView.theme}>
-      <h1 style={title.theme}>{title.content}</h1>
-      <p style={subtitle.theme}>{subtitle.content}</p>
+    <div className={styles.view}>
+      <h1 className={styles.title}>{title.content}</h1>
+      <p className={styles.subtitle}>{subtitle.content}</p>
     </div>
    </>
   )

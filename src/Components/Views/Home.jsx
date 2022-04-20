@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
+import styles from '../../styles.module.css';
 
 export default function Home() {
 
-  const homeView = {
-    theme: {
-      minHeight: 'calc(100vh - 6rem)',
-    }
-  }
   return (
     <>
-      <div style={homeView.theme}>Insert Slider</div>
+      <div className={styles.view}>Insert Slider</div>
     </>
   )
 }

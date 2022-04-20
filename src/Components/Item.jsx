@@ -7,15 +7,9 @@ import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 import ItemDetailContainer from './ItemDetailContainer';
 import AddItemButton from './AddItemButton'
+import styles from '../styles.module.css';
 
 export default function Item({id,title, price, image, stock}) {
-
-    const cardActions = {
-        theme: {
-            display: 'block',
-            marginBottom: '1rem'
-        }
-    }
     
   return (
     <>
@@ -35,7 +29,7 @@ export default function Item({id,title, price, image, stock}) {
                 </Typography>
             </CardContent>
             <ItemCount stock={stock}/>
-            <CardActions style={cardActions.theme}>
+            <CardActions className={styles.cardActions}>
                 {/* Add Item Button*/}
                 <AddItemButton stock={stock}/>
 
